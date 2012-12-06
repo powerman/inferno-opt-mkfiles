@@ -12,7 +12,7 @@ OPTDIR=${OPTDIR:os=$INFERNO_HOME}
 
 # MKFILES: [host,emu] path to mkfiles/ dir (from mkfile's dir).
 # Used to find helper files needed by some mkfiles and ease including them.
-MKFILES=$OPTDIR/mkfiles
+MKFILES=$OPTDIR/opt/mkfiles
 
 # EMUCMD: command to run .dis file from host os.
 # EMUPKGDIR: [emu] path to project's root (from $EMUCMD's dir).
