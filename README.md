@@ -1,4 +1,41 @@
-These mkfiles can be used as is or as basis for your own mkfiles. Unlike standard files in `/mkfiles` these know how to handle `/opt` packages; able to build/run tests (both in host os and inside emu) and have other features (generation of INDEX files for your man pages, generation of man pages from text in asciidoc markup, etc.).
+# Description
+
+These mkfiles can be used as is or as basis for your own mkfiles. Unlike
+standard files in `/mkfiles` these know how to handle `/opt` packages;
+able to build/run tests (both in host os and inside emu) and have other
+features (generation of INDEX files for your man pages, generation of man
+pages from text in asciidoc markup, etc.).
+
+
+# Install
+
+Make directory with these files available in /opt/mkfiles.
+
+Install system-wide:
+
+```
+# git clone https://github.com/powerman/inferno-opt-mkfiles.git $INFERNO_ROOT/opt/mkfiles
+```
+
+or in your home directory:
+
+```
+$ git clone https://github.com/powerman/inferno-opt-mkfiles.git $INFERNO_USER_HOME/opt/mkfiles
+$ emu
+; bind opt /opt
+```
+
+or locally for your project:
+
+```
+$ git clone https://github.com/powerman/inferno-opt-mkfiles.git $YOUR_PROJECT_DIR/opt/mkfiles
+$ emu
+; cd $YOUR_PROJECT_DIR_INSIDE_EMU
+; bind opt /opt
+```
+
+
+# Usage
 
 Start your new project using these mkfiles:
 
@@ -10,25 +47,3 @@ $ emu
 ; cp /opt/mkfiles/mkfile-example mkfile
 ```
 
-See example project skeleton/template: http://code.google.com/p/inferno-opt-skel/
-
-
----
-
-
-To install system-wide (if your Inferno installed in your home directory or if you root):
-
-```
-hg clone https://code.google.com/p/inferno-opt-mkfiles/ $INFERNO_ROOT/opt/mkfiles
-```
-
-To install locally for some project:
-
-```
-$ cd YOUR_PROJECT_DIR
-$ mkdir -p opt/
-$ hg clone https://code.google.com/p/inferno-opt-mkfiles/ opt/mkfiles
-$ emu
-; cd YOUR_PROJECT_DIR_INSIDE_EMU
-; bind opt /opt
-```
